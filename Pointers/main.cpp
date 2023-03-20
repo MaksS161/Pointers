@@ -6,7 +6,7 @@ using std::endl;
 
 #define tab "\t"
 
-int Sum(int n...);
+int Sum(int n,...);
 
 //#define POINTERS_BASICS
 //#define ARRAY
@@ -51,18 +51,20 @@ void main()
 	//ВАЖНО!!!
 	//	Программу обязательно нужно скомпилировать в архитектуру x86(!!!НЕ x64!!!)
 
-	int n;
-	cout << "Сумма принимаемых параметров =" << Sum << endl;
+	t n = 6;
+	cout << "Сумма принимаемых параметров =" << *p << endl;
 
 
 #endif // HOME_WORK
 }
-int Sum(int n...)
+int Sum(int n,...)
 {
-	int* sum = &n;
+	int sum = 0;
+	int* p = &n;
 	for (int i = 0; i < n; i++)
 	{
-		sum += i;
+		sum +=* p;
+	cout << *p << "\t";
 	}
-	return *sum;
+	return *p;
 }
