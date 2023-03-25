@@ -54,17 +54,16 @@ void main()
 
 
 	// Запутался, не хватило времени (работа)
-	cout << "Сумма принимаемых параметров = " << sum << endl;
+	cout <<"Сумма парамеров = "<< sum(3, 5, 8, 13, 21, 34, 0) << endl;
 
 }
 int sum(int n, ...)
 {
 	int sum = 0;
-	int* p = &n;
-	for (int i = 0; i < n; i++)
+	int* pn = &n;
+	while (*pn)
 	{
-		sum += *p;
-		p++;
+		sum += *pn++;
 	}
 	return sum;
 }
