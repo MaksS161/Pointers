@@ -1,0 +1,8 @@
+Build started...
+1+AD4------- Build started: Project: Split, Configuration: Debug x64 ------
+1+AD4-main.cpp
+1+AD4-C:+AFw-Users+AFwEIgQwBDwEMARABDAAXA-source+AFw-repos+AFw-Pointers+AFw-Split+AFw-main.cpp(8,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+1+AD4-Split.vcxproj -+AD4- C:+AFw-Users+AFwEIgQwBDwEMARABDAAXA-source+AFw-repos+AFw-Pointers+AFw-x64+AFw-Debug+AFw-Split.exe
+1+AD4-Done building project +ACI-Split.vcxproj+ACI-.
++AD0APQA9AD0APQA9AD0APQA9AD0- Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped +AD0APQA9AD0APQA9AD0APQA9AD0-
++AD0APQA9AD0APQA9AD0APQA9AD0- Build started at 9:16 AM and took 15,522 seconds +AD0APQA9AD0APQA9AD0APQA9AD0-
