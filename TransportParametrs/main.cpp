@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void Exchenge(int a, int b);
+void Exchenge(int& a, int& b);
 
 void main()
 {
@@ -13,7 +13,7 @@ void main()
 	cout << a << "\t" << b << endl;
 }
 
-void Exchenge(int a, int b)
+void Exchenge(int& a, int& b)
 {
 	int buffer = a;
 	a = b;
