@@ -3,6 +3,7 @@ using namespace std;
 
 void FillRand(int arr[], const int n);
 void Print(int arr[], const int n);
+
 int* push_back(int arr[], int &n, int value);
 int* push_front(int arr[], int &n, int value);
 
@@ -21,7 +22,6 @@ void main()
 
 	int value;
 	cout << "Введите добавляеемые значения: "; cin >> value;
-	//1. Создаем буферный массив нужного размера 
 	
 	arr= push_back(arr, n, value);
 	Print(arr, n);
@@ -30,9 +30,9 @@ void main()
 
 	arr = pop_back(arr, n);
 	Print(arr, n);
-	
 	arr = pop_front(arr, n);
 	Print(arr, n);
+	
 	delete[] arr;
 }
 
@@ -55,6 +55,7 @@ void Print(int arr[], const int n)
 }
 int* push_back(int arr[],  int& n, int value)
 {
+	//1. Создаем буферный массив нужного размера 
 	int* buffer = new int[n + 1];
 	//2. Копируем все значения из исх в буферный 
 	for (int i = 0; i < n; i++)
