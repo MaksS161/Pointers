@@ -10,6 +10,8 @@ int* push_front(int arr[], int &n, int value);
 int* pop_back(int arr[], int &n);
 int* pop_front(int arr[], int &n);
 
+int* insert(int arr[], int &n, int value, int index);
+
 void main()
 {
 	setlocale(LC_ALL, "");
@@ -23,16 +25,23 @@ void main()
 	int value;
 	cout << "Введите добавляеемые значения: "; cin >> value;
 	
-	arr= push_back(arr, n, value);
-	Print(arr, n);
-	arr= push_front(arr, n, value);
+	//arr= push_back(arr, n, value);
+	//Print(arr, n);
+	//arr= push_front(arr, n, value);
+	//Print(arr, n);
+
+	//arr = pop_back(arr, n);
+	//Print(arr, n);
+	//arr = pop_front(arr, n);
+	//Print(arr, n);
+	
+	int index;
+	//int insert_new;//переменная для вставление значение массива по индексу
+	cout << "Введите индекса заменяемого элимента:"; cin >> index;
+	//cout << "Введите новое значение заменяемого элимента:"; cin >> insert_new;
+	arr= insert (arr, n, value, index);
 	Print(arr, n);
 
-	arr = pop_back(arr, n);
-	Print(arr, n);
-	arr = pop_front(arr, n);
-	Print(arr, n);
-	
 	delete[] arr;
 }
 
@@ -99,4 +108,21 @@ int* pop_front(int arr[], int& n)
 	for (int i = 0; i < n; i++) buffer[i] = arr[i+1];
 	delete[]arr;
 	return buffer;
+}
+int* insert(int arr[], int& n, int value, int index)
+{
+	int* buffer = new int[n +1];
+	for (int i = 0; i < n; i++) //i < index ? buffer[i] = arr[i] : buffer[i + 1] = arr[i];
+	{
+		while (i<index)
+		{
+		buffer[i] = arr[i];
+		}
+		buffer[i+1] = arr[i];
+	}
+	buffer[index] = value;
+	n++;
+	delete[] arr;
+	arr = buffer;
+	return arr;
 }
