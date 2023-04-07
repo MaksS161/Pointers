@@ -2,16 +2,17 @@
 using namespace std;
 
 void FillRand(int arr[], const int n);
-void Print(int arr[], const int n);
 
-int* push_back(int arr[], int &n, int value);
-int* push_front(int arr[], int &n, int value);
+template <typename T> void Print(T arr[], const int n);
 
-int* pop_back(int arr[], int &n);
-int* pop_front(int arr[], int &n);
+template <typename T>  T* push_back(int arr[], T &n, T value);
+template <typename T>  T* push_front(int arr[], T &n, T value);
 
-int* insert(int arr[], int &n, int value, int index_ins);
-int* erase(int arr[], int &n, int index_er);
+template <typename T> T* pop_back(int arr[], T &n);
+template <typename T> T* pop_front(int arr[], T &n);
+
+template <typename T> T* insert(int arr[], T &n, T value, T index_ins);
+template <typename T> T* erase(int arr[], T &n, T index_er);
 
 void main()
 {
@@ -57,7 +58,7 @@ void FillRand(int arr[], const int n)
 		arr[i] = rand() % 100;
 	}
 }
-void Print(int arr[], const int n)
+template <typename T> void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -66,7 +67,7 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
-int* push_back(int arr[],  int& n, int value)
+template <typename T> T* push_back(int arr[],  T& n, T value)
 {
 	//1. Создаем буферный массив нужного размера 
 	int* buffer = new int[n + 1];
@@ -86,9 +87,9 @@ int* push_back(int arr[],  int& n, int value)
 	//6. Возвращаем новый массив
 	return arr;
 }
-int* push_front(int arr[], int& n, int value)
+template <typename T> T* push_front(int arr[], T& n, T value)
 {
-	int* buffer = new int[n + 1];
+	T* buffer = new int[n + 1];
 	for (int i = 0; i < n; i++)
 	{
 		buffer[i+1] = arr[i];
@@ -99,23 +100,23 @@ int* push_front(int arr[], int& n, int value)
 	n++;
 	return arr;
 }
-int* pop_back(int arr[], int& n)
+template <typename T> T* pop_back(int arr[], T& n)
 {
-	int* buffer=new int [--n];
+	T* buffer=new int [--n];
 	for (int i = 0; i < n; i++) buffer[i] = arr[i];
 	delete[]arr;
 	return buffer;
 }
-int* pop_front(int arr[], int& n)
+template <typename T> T* pop_front(int arr[], T& n)
 {
-	int* buffer = new  int[--n];
+	T* buffer = new  int[--n];
 	for (int i = 0; i < n; i++) buffer[i] = arr[i+1];
 	delete[]arr;
 	return buffer;
 }
-int* insert(int arr[], int& n, int value, int index_ins)
+template <typename T> T* insert(int arr[], T& n, T value, T index_ins)
 {
-	int* buffer = new int[n +1];
+	T* buffer = new int[n +1];
 	for (int i = 0; i < n; i++) 
 	{
 		if (i<index_ins)
@@ -130,9 +131,9 @@ int* insert(int arr[], int& n, int value, int index_ins)
 	n++;
 	return arr;
 }
-int* erase(int arr[], int& n, int index_er)
+template <typename T> T* erase(int arr[], T& n, T index_er)
 {
-	int* buffer = new int[n-1];
+	T* buffer = new int[n-1];
 	for (int i = 0; i < n; i++) 
 	{
 		if (i < index_er)
