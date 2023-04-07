@@ -133,7 +133,7 @@ int* insert(int arr[], int& n, int value, int index_ins)
 int* erase(int arr[], int& n, int index_er)
 {
 	int* buffer = new int[n-1];
-	for (int i = 0; i < n; i++) //i < index_er ? buffer[i] = arr[i] : buffer[i] = arr[i + 1];
+	for (int i = 0; i < n; i++) 
 	{
 		if (i < index_er)
 		{
