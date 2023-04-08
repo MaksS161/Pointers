@@ -42,7 +42,7 @@ void main()
 	arr= insert (arr, n, value, index_ins);
 	Print(arr, n);
 	
-	int index_er;
+	int index_er;//переменная для удаления элимента
 	cout << "Введите индекса удалаяемого элимента:"; cin >> index_er;
 	arr= erase(arr, n, index_er);
 	Print(arr, n);
@@ -114,6 +114,7 @@ template <typename T> T* pop_front(int arr[], T& n)
 	delete[]arr;
 	return buffer;
 }
+//добавление элимента по индексу
 template <typename T> T* insert(int arr[], T& n, T value, T index_ins)
 {
 	T* buffer = new int[n +1];
@@ -131,6 +132,7 @@ template <typename T> T* insert(int arr[], T& n, T value, T index_ins)
 	n++;
 	return arr;
 }
+//удаление элимента по индексу
 template <typename T> T* erase(int arr[], T& n, T index_er)
 {
 	T* buffer = new int[n-1];
