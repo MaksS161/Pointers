@@ -41,7 +41,7 @@ void main()
 	arr= insert (arr, n, value, index_ins);
 	Print(arr, n);
 	
-	int index_er;
+	int index_er;//переменная для удаления элемента
 	cout << "Введите индекса удалаяемого элимента:"; cin >> index_er;
 	arr= erase(arr, n, index_er);
 	Print(arr, n);
@@ -113,6 +113,7 @@ int* pop_front(int arr[], int& n)
 	delete[]arr;
 	return buffer;
 }
+//добавление элемента по индексу
 int* insert(int arr[], int& n, int value, int index_ins)
 {
 	int* buffer = new int[n +1];
@@ -130,6 +131,7 @@ int* insert(int arr[], int& n, int value, int index_ins)
 	n++;
 	return arr;
 }
+//удаление элимента по индексу
 int* erase(int arr[], int& n, int index_er)
 {
 	int* buffer = new int[n-1];
