@@ -4,7 +4,6 @@
 #include"Action.h"
 #include"Action.cpp"
 
-
 void FillRand(int arr[], const int n);
 
 void main()
