@@ -66,7 +66,7 @@ template <typename T> T* insert(T arr[], T& n, T value, T index_ins)
 	return arr;
 }
 //удаление элимента по индексу
-template <typename T> T* erase(int arr[], T& n, T index_er)
+template <typename T> T* erase(T arr[], T& n, T index_er)
 {
 	T* buffer = new int[n - 1];
 	for (int i = 0; i < n; i++)
